@@ -55,7 +55,7 @@ export default function DrawerComponent() {
           marginTop: '10px',
           backgroundColor: 'white'
         }}>
-          Un código bien mierdoso
+          El código para acceder
         </Box>
         <ButtonGroup
           variant="soft"

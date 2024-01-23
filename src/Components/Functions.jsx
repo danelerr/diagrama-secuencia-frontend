@@ -45,6 +45,82 @@ export const exportToTxt = (textContent, fileName) => {
 };
 
 
+
+export const exportToJava = async (textContent, fileName) => {
+  const x = await fetch(`${import.meta.env.VITE_BACKEND_URL}diagrama-to-java`, {
+    method: 'POST',
+    body: JSON.stringify({ diagrama: textContent }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  const data = await x.json();
+  console.log(data);
+
+  const blob = new Blob([data.content], { type: 'text/plain' });
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${fileName}.java`;
+
+  document.body.appendChild(link);
+
+  link.click();
+  document.body.removeChild(link);
+};
+
+
+export const exportToPython = async (textContent, fileName) => {
+  const x = await fetch(`${import.meta.env.VITE_BACKEND_URL}diagrama-to-python`, {
+    method: 'POST',
+    body: JSON.stringify({ diagrama: textContent }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  const data = await x.json();
+  console.log(data);
+
+  const blob = new Blob([data.content], { type: 'text/plain' });
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${fileName}.py`;
+
+  document.body.appendChild(link);
+
+  link.click();
+  document.body.removeChild(link);
+};
+
+
+export const exportToJavascript = async (textContent, fileName) => {
+  const x = await fetch(`${import.meta.env.VITE_BACKEND_URL}diagrama-to-javascript`, {
+    method: 'POST',
+    body: JSON.stringify({ diagrama: textContent }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  const data = await x.json();
+  console.log(data);
+
+  const blob = new Blob([data.content], { type: 'text/plain' });
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${fileName}.js`;
+
+  document.body.appendChild(link);
+
+  link.click();
+  document.body.removeChild(link);
+};
+
+
+
+
+
 export const exportToJSON = async (jsonString, fileName) => {
   try {
     // Convertir el objeto JSON a una cadena de texto con formato legible

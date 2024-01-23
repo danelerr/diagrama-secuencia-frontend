@@ -9,7 +9,7 @@ import { styled } from '@mui/joy/styles';
 import Button from '@mui/joy/Button';
 import MenuList from '@mui/joy/MenuList';
 import Box from '@mui/joy/Box';
-import { exportToPNG, exportToSVG, exportToTxt, exportToJSON, exportToXML } from "./Functions.jsx";
+import { exportToPNG, exportToSVG, exportToTxt, exportToJSON, exportToXML, exportToJava, exportToJavascript, exportToPython } from "./Functions.jsx";
 
 const Popup = styled(Popper)({
   zIndex: 1000,
@@ -112,15 +112,15 @@ export default function MenuExportar( { svgText, text } ) {
                       Texto plano
                     </Button>
 
-                    <Button sx={btnStyle}>
+                    <Button onClick={()=>exportToJava(svgText, 'diagram')} sx={btnStyle}>
                       Java
                     </Button>
 
-                    <Button sx={btnStyle}>
+                    <Button onClick={()=>exportToPython(svgText, 'diagram')} sx={btnStyle}>
                       Python
                     </Button>
 
-                    <Button sx={btnStyle}>
+                    <Button onClick={()=>exportToJavascript(svgText, 'diagram')} sx={btnStyle}>
                       Javascript
                     </Button>
                   </Box>
