@@ -1,8 +1,12 @@
-# React + Vite
+##  Frontend para: Diseñador de diseñador de diagramas de secuencias
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Para ejecutarlo.
+1. Ejecutar la aplicacion backend alojada en [este link](https://github.com/danelerr/diagrama-secuencia-backend)
+2. Ejecutar el comando  `npm install`
+3. Finalmente para levantarlo `npm run dev` 
 
-Currently, two official plugins are available:
+### Futuros cambios que se deben hacer:
+1. Mejorar la interfaz de usuario 
+2. Agregarle la posibilidad de edición colaborativa.
+3. Gestionar de forma separada la exportación a imágenes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
